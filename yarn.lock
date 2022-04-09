@@ -2,6 +2,36 @@
 # yarn lockfile v1
 
 
+"@algolia/autocomplete-core@1.6.1":
+  "integrity" "sha512-o/aCy6RxZvL6CBtu6tbuU7LTQGiQ//QzVZvH33/UZJot2DrwH+bRJ6W0JdXjZ5LGvJ/B4unYHQqo8RMncXkaEw=="
+  "resolved" "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "@algolia/autocomplete-shared" "1.6.1"
+
+"@algolia/autocomplete-js@^1.6.1":
+  "integrity" "sha512-enlhvB3770i/9uJjLXVJTkOu67FO761gPVDLCOPj3fWbvk1GikLzmfo5ZcpI/PtFbAw3674JvLNfmFZsRwUTAw=="
+  "resolved" "https://registry.npmjs.org/@algolia/autocomplete-js/-/autocomplete-js-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "@algolia/autocomplete-core" "1.6.1"
+    "@algolia/autocomplete-preset-algolia" "1.6.1"
+    "@algolia/autocomplete-shared" "1.6.1"
+    "htm" "^3.0.0"
+    "preact" "^10.0.0"
+
+"@algolia/autocomplete-preset-algolia@1.6.1":
+  "integrity" "sha512-L8O8ELSGGx8TH/n4QrZWxoFN6cNOowLUryGH9x/lIBmZ5WuNXYD79nqDXOf3BA6KuZAYVhh7hFPat+rPswHk8w=="
+  "resolved" "https://registry.npmjs.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "@algolia/autocomplete-shared" "1.6.1"
+
+"@algolia/autocomplete-shared@1.6.1":
+  "integrity" "sha512-1hisgA1KThnadGxc6acPM4BrKM+mEVDE12cGVVYioXVZu2fG+M58x0/rAGOo9LnlE/RPUqDqdd29uDz1eck0CA=="
+  "resolved" "https://registry.npmjs.org/@algolia/autocomplete-shared/-/autocomplete-shared-1.6.1.tgz"
+  "version" "1.6.1"
+
 "@algolia/cache-browser-local-storage@4.13.0":
   "integrity" "sha512-nj1vHRZauTqP/bluwkRIgEADEimqojJgoTRCel5f6q8WCa9Y8QeI4bpDQP28FoeKnDRYa3J5CauDlN466jqRhg=="
   "resolved" "https://registry.npmjs.org/@algolia/cache-browser-local-storage/-/cache-browser-local-storage-4.13.0.tgz"
@@ -57,7 +87,7 @@
     "@algolia/requester-common" "4.13.0"
     "@algolia/transporter" "4.13.0"
 
-"@algolia/client-search@4.13.0":
+"@algolia/client-search@^4.5.1", "@algolia/client-search@^4.9.1", "@algolia/client-search@4.13.0":
   "integrity" "sha512-blgCKYbZh1NgJWzeGf+caKE32mo3j54NprOf0LZVCubQb3Kx37tk1Hc8SDs9bCAE8hUvf3cazMPIg7wscSxspA=="
   "resolved" "https://registry.npmjs.org/@algolia/client-search/-/client-search-4.13.0.tgz"
   "version" "4.13.0"
@@ -1651,7 +1681,7 @@
   dependencies:
     "@algolia/events" "^4.0.1"
 
-"algoliasearch@>= 3.1 < 5", "algoliasearch@4":
+"algoliasearch@^4.9.1", "algoliasearch@>= 3.1 < 5", "algoliasearch@4":
   "integrity" "sha512-oHv4faI1Vl2s+YC0YquwkK/TsaJs79g2JFg5FDm2rKN12VItPTAeQ7hyJMHarOPPYuCnNC5kixbtcqvb21wchw=="
   "resolved" "https://registry.npmjs.org/algoliasearch/-/algoliasearch-4.13.0.tgz"
   "version" "4.13.0"
@@ -5225,6 +5255,11 @@
   "resolved" "https://registry.npmjs.org/hsla-regex/-/hsla-regex-1.0.0.tgz"
   "version" "1.0.0"
 
+"htm@^3.0.0":
+  "integrity" "sha512-L0s3Sid5r6YwrEvkig14SK3Emmc+kIjlfLhEGn2Vy3bk21JyDEes4MoDsbJk6luaPp8bugErnxPz86ZuAw6e5Q=="
+  "resolved" "https://registry.npmjs.org/htm/-/htm-3.1.0.tgz"
+  "version" "3.1.0"
+
 "html-encoding-sniffer@^1.0.2":
   "integrity" "sha512-71lZziiDnsuabfdYiUeWdCVyKuqwWi23L8YeIgV9jSSZHCtb6wB1BKWooH7L3tn4/FuZJMVWyNaIDr4RGmaSYw=="
   "resolved" "https://registry.npmjs.org/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz"
@@ -8541,6 +8576,11 @@
   dependencies:
     "picocolors" "^0.2.1"
     "source-map" "^0.6.1"
+
+"preact@^10.0.0":
+  "integrity" "sha512-MufnRFz39aIhs9AMFisonjzTud1PK1bY+jcJLo6m2T9Uh8AqjD77w11eAAawmjUogoGOnipECq7e/1RClIKsxg=="
+  "resolved" "https://registry.npmjs.org/preact/-/preact-10.7.1.tgz"
+  "version" "10.7.1"
 
 "prelude-ls@~1.1.2":
   "integrity" "sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ="

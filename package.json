@@ -9,6 +9,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.6.1",
     "algoliasearch": "4",
     "qs": "^6.10.3",
     "react": "16.12.0",
