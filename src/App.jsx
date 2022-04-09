@@ -1,4 +1,5 @@
 import React from 'react';
+import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
 import {
   connectSearchBox,
   InstantSearch,
@@ -65,7 +66,25 @@ function App() {
   }, []);
 
   const plugins = React.useMemo(() => {
-    return []; // add more plugins here
+    const recentSearchesPlugin = createLocalStorageRecentSearchesPlugin({
+      key: 'search',
+      limit: 3,
+      transformSource({ source }) {
+        return {
+          ...source,
+          onSelect(params) {
+            setSearchState(searchState => ({
+              ...searchState,
+              query: params.item.label,
+            }));
+          },
+        };
+      },
+    });
+  
+    return [
+      recentSearchesPlugin,
+    ];
   }, []);
 
   return (
