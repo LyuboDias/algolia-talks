@@ -5,7 +5,7 @@ import {
   connectSearchBox,
   InstantSearch,
   Hits,
-  // SearchBox,
+  SortBy,
   RefinementList,
   Pagination,
   Highlight,
@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
 import './App.css';
 import SEARCH_CLIENT from './constants/client';
 import { Autocomplete } from './components/Autocomplete.jsx';
+import ClearRefinements from 'react-instantsearch-dom/dist/cjs/widgets/ClearRefinements';
 
 const VirtualSearchBox = connectSearchBox(() => null);
 
@@ -121,9 +122,18 @@ function App() {
           createURL={createURL}
         >
           <div className="search-panel">
-            {/* <div className="search-panel__filters">
+            <div className="search-panel__filters">
+              <ClearRefinements />
+              <h4>Tags</h4>
               <RefinementList attribute="tags" />
-            </div> */}
+              <SortBy 
+                defaultRefinement="Talks"
+                items={[
+                  {value: 'Talks', label: 'Most Relevant'},
+                  {value: 'Talks_popularity_score_desc', label: 'Most Rated'},
+                ]}
+              />
+            </div>
 
             <div className="search-panel__results">
               {/* <SearchBox
