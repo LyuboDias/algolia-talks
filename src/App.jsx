@@ -1,5 +1,6 @@
 import React from 'react';
 import { createLocalStorageRecentSearchesPlugin } from '@algolia/autocomplete-plugin-recent-searches';
+import { createQuerySuggestionsPlugin } from '@algolia/autocomplete-plugin-query-suggestions';
 import {
   connectSearchBox,
   InstantSearch,
@@ -68,7 +69,7 @@ function App() {
   const plugins = React.useMemo(() => {
     const recentSearchesPlugin = createLocalStorageRecentSearchesPlugin({
       key: 'search',
-      limit: 3,
+      limit: 5,
       transformSource({ source }) {
         return {
           ...source,
@@ -81,9 +82,31 @@ function App() {
         };
       },
     });
+
+    const querySuggestionsPlugin = createQuerySuggestionsPlugin({
+      SEARCH_CLIENT,
+      indexName: 'Talks_query_suggestions',
+      getSearchParams() {
+        return recentSearchesPlugin.data.getAlgoliaSearchParams({
+          hitsPerPage: 5,
+        });
+      },
+      transformSource({ source }) {
+        return {
+          ...source,
+          onSelect(params) {
+            setSearchState(searchState => ({
+              ...searchState,
+              query: params.item.query,
+            }));
+          },
+        };
+      },
+    }); 
   
     return [
       recentSearchesPlugin,
+      querySuggestionsPlugin
     ];
   }, []);
 
@@ -98,9 +121,9 @@ function App() {
           createURL={createURL}
         >
           <div className="search-panel">
-            <div className="search-panel__filters">
+            {/* <div className="search-panel__filters">
               <RefinementList attribute="tags" />
-            </div>
+            </div> */}
 
             <div className="search-panel__results">
               {/* <SearchBox

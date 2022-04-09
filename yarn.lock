@@ -20,6 +20,16 @@
     "htm" "^3.0.0"
     "preact" "^10.0.0"
 
+"@algolia/autocomplete-plugin-query-suggestions@^1.6.1":
+  "integrity" "sha512-ONlc++uqRLOv2hYHfZPpN8X5s7N2/WGxDqByaHSX34tQ1Z54GQAnPU2+jNQJr90UpLD2TTiFFRC59CU/9Egi7g=="
+  "resolved" "https://registry.npmjs.org/@algolia/autocomplete-plugin-query-suggestions/-/autocomplete-plugin-query-suggestions-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "@algolia/autocomplete-core" "1.6.1"
+    "@algolia/autocomplete-js" "1.6.1"
+    "@algolia/autocomplete-preset-algolia" "1.6.1"
+    "@algolia/autocomplete-shared" "1.6.1"
+
 "@algolia/autocomplete-plugin-recent-searches@^1.6.1":
   "integrity" "sha512-HCYcLGgRM6aiatyWCT10K8GWosoK8cZlJp9n/tO7p94WJXYoZHk1dMaTarkA+GRV+4+TQv9OZrC8yttyERirFA=="
   "resolved" "https://registry.npmjs.org/@algolia/autocomplete-plugin-recent-searches/-/autocomplete-plugin-recent-searches-1.6.1.tgz"
