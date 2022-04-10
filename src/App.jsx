@@ -16,6 +16,7 @@ import './App.css';
 import SEARCH_CLIENT from './constants/client';
 import { Autocomplete } from './components/Autocomplete.jsx';
 import ClearRefinements from 'react-instantsearch-dom/dist/cjs/widgets/ClearRefinements';
+import Stats from 'react-instantsearch-dom/dist/cjs/widgets/Stats';
 
 const VirtualSearchBox = connectSearchBox(() => null);
 
@@ -113,9 +114,12 @@ function App() {
 
   return (
     <div>
+      <header>
+        <img src="/navbar.png" alt="navbar" className="navbar-img" />
+      </header>
       <div className="container">
-        <InstantSearch 
-          searchClient={SEARCH_CLIENT} 
+        <InstantSearch
+          searchClient={SEARCH_CLIENT}
           indexName="Talks"
           searchState={searchState}
           onSearchStateChange={setSearchState}
@@ -124,17 +128,8 @@ function App() {
           <div className="search-panel">
             <div className="search-panel__filters">
               <ClearRefinements />
-              <h4>Tags</h4>
               <RefinementList attribute="tags" />
-              <SortBy 
-                defaultRefinement="Talks"
-                items={[
-                  {value: 'Talks', label: 'Most Relevant'},
-                  {value: 'Talks_popularity_score_desc', label: 'Most Rated'},
-                ]}
-              />
             </div>
-
             <div className="search-panel__results">
               {/* <SearchBox
                 className="searchbox"
@@ -154,6 +149,18 @@ function App() {
                 plugins={plugins}
               />
               <VirtualSearchBox />
+              <div className="stats-wrapper">
+                <h2 className="talks">Talks</h2>
+                <SortBy 
+                  defaultRefinement="Talks"
+                  items={[
+                    {value: 'Talks', label: 'Most Relevant'},
+                    {value: 'Talks_popularity_score_desc', label: 'Highest Rated'},
+                    {value: 'Talks_viewed_count_desc', label: 'Most Views'},
+                  ]}
+                />
+                <Stats />
+              </div>
               <Hits hitComponent={Hit} />
 
               <div className="pagination">
@@ -163,6 +170,13 @@ function App() {
           </div>
         </InstantSearch>
       </div>
+      {/* sticky div */}
+      <div className="sticky-div">
+        <p>New! Activity Feed</p>
+      </div>
+      <footer>
+        <img src="/footer.png" alt="footer" className="footer-img" />
+      </footer>
     </div>
   );
 }
@@ -171,11 +185,21 @@ function Hit(props) {
   return (
     <article>
       <h1>
+        <Highlight attribute="speakers" hit={props.hit} />
+        :&nbsp;&nbsp;
         <Highlight attribute="name" hit={props.hit} />
       </h1>
-      <p>
-        <Highlight attribute="description" hit={props.hit} />
-      </p>
+      <br />
+      <div className="wrapper">
+        <img
+          src={props.hit.image_url}
+          alt={props.hit.name}
+          className="hit_image"
+        />
+        <p>
+          <Highlight attribute="description" hit={props.hit} />
+        </p>
+      </div>
     </article>
   );
 }
