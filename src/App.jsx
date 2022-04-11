@@ -108,7 +108,7 @@ function App() {
   
     return [
       recentSearchesPlugin,
-      querySuggestionsPlugin
+      // querySuggestionsPlugin
     ];
   }, []);
 
@@ -116,6 +116,7 @@ function App() {
     <div>
       <header>
         <img src="/navbar.png" alt="navbar" className="navbar-img" />
+        <img src="/mobile-navbar.png" alt="mobile-navbar" className="mobile-navbar" />
       </header>
       <div className="container">
         <InstantSearch
@@ -128,7 +129,12 @@ function App() {
           <div className="search-panel">
             <div className="search-panel__filters">
               <ClearRefinements />
-              <RefinementList attribute="tags" />
+              <h3>Tags</h3>
+              <RefinementList attribute="tags" searchable showMore limit={5} />
+              <h3>Events</h3>
+              <RefinementList attribute="event_name" showMore limit={5} />
+              <h3>Speakers</h3>
+              <RefinementList attribute="speakers" showMore limit={5} />
             </div>
             <div className="search-panel__results">
               {/* <SearchBox
@@ -138,7 +144,7 @@ function App() {
                 }}
               /> */}
               <Autocomplete
-                placeholder="Search"
+                placeholder="Search for TED Talk, Speaker or specific word..."
                 detachedMediaQuery="none"
                 initialState={{
                   query: searchState.query,
@@ -151,6 +157,9 @@ function App() {
               <VirtualSearchBox />
               <div className="stats-wrapper">
                 <h2 className="talks">Talks</h2>
+                <Stats />
+              </div>
+              <div>
                 <SortBy 
                   defaultRefinement="Talks"
                   items={[
@@ -159,7 +168,7 @@ function App() {
                     {value: 'Talks_viewed_count_desc', label: 'Most Views'},
                   ]}
                 />
-                <Stats />
+                <p>More Filters</p>
               </div>
               <Hits hitComponent={Hit} />
 
@@ -172,10 +181,13 @@ function App() {
       </div>
       {/* sticky div */}
       <div className="sticky-div">
-        <p>New! Activity Feed</p>
+      <img src="/arrow.png" alt="arrow" className="arrow" />
+        <p className="feed">New! Activity Feed</p>
       </div>
       <footer>
         <img src="/footer.png" alt="footer" className="footer-img" />
+        <img src="/mobile-footer-top.png" alt="footer" className="mobile-footer" />
+        <img src="/mobile-footer-bottom.png" alt="footer" className="mobile-footer" />
       </footer>
     </div>
   );
@@ -185,7 +197,7 @@ function Hit(props) {
   return (
     <article>
       <h1>
-        <Highlight attribute="speakers" hit={props.hit} />
+        <Highlight attribute="speakers" hit={props.hit} highlightPreTag />
         :&nbsp;&nbsp;
         <Highlight attribute="name" hit={props.hit} />
       </h1>
@@ -196,9 +208,8 @@ function Hit(props) {
           alt={props.hit.name}
           className="hit_image"
         />
-        <p>
-          <Highlight attribute="description" hit={props.hit} />
-        </p>
+        <Highlight attribute="description" hit={props.hit} />
+        <Highlight attribute="duration_range" hit={props.hit} />
       </div>
     </article>
   );

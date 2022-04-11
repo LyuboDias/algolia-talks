@@ -1,35 +1,11 @@
-em {
-  background: cyan;
-  font-style: normal;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  min-height: 50px;
-  padding: 0.5rem 1rem;
-  background-image: linear-gradient(to right, #8e43e7, #00aeff);
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-.header a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.header-title {
-  font-size: 1.2rem;
-  font-weight: normal;
-}
-
-.header-title::after {
-  content: ' ▸ ';
-  padding: 0 0.5rem;
-}
-
-.header-subtitle {
-  font-size: 1.2rem;
+footer {
+  height: 320px;
 }
 
 .container {
@@ -75,13 +51,13 @@ em {
   width: 100%;
   border: none;
   box-shadow: none;
-  padding: 12px 0;
+  padding: 12px 12px 12px 0;
 }
 
 .wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
 
 .navbar-img,
@@ -93,11 +69,17 @@ em {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 16px 0;
+}
+
+h3 {
+  margin: 10px 0;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 .sticky-div {
-  width: 150px;
-  height: 20px;
+  width: 180px;
+  height: 34px;
   background-color: rgb(255, 80, 65);
   position: fixed;
   bottom: 0;
@@ -112,9 +94,16 @@ em {
   border-top-right-radius: 5px;
   line-height: 0.875rem;
   padding: 0.75rem;
+  padding-left: 0;
   white-space: nowrap;
   z-index: 6;
   outline: none;
+}
+
+.arrow {
+  width: 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .aa-Form {
@@ -127,6 +116,10 @@ em {
   width: 40px;
   color: #666666;
 }
+
+.ais-RefinementList {
+  margin: 20px 0;
+} 
 
 .ais-RefinementList-list {
   margin-right: 40px;
@@ -167,4 +160,45 @@ em {
 .talks {
   font-size: 2rem;
   font-weight: 200;
+}
+
+.mobile-footer {
+  width: 100%;
+  display: none;
+}
+
+.mobile-navbar {
+  width: 100%;
+  display: none;
+}
+
+/* Media query */
+@media (max-width: 850px) {
+  .feed {
+    display: none;
+  }
+  
+  .sticky-div {
+    padding: 0;
+    width: max-content;
+  }
+
+  .mobile-footer,
+  .mobile-navbar {
+    display: block;
+  }
+
+  .footer-img,
+  .navbar-img {
+    display: none;
+  }
+
+  .search-panel__results {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .search-panel__filters {
+    display: none;
+  }
 }
