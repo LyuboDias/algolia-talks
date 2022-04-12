@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: black;
 }
 
 footer {
@@ -56,8 +57,6 @@ footer {
 
 .wrapper {
   display: flex;
-  /* justify-content: space-between; */
-  /* align-items: center; */
 }
 
 .navbar-img,
@@ -72,11 +71,6 @@ footer {
   margin: 16px 0;
 }
 
-h3 {
-  margin: 10px 0;
-  border-bottom: 1px solid #CCCCCC;
-}
-
 .sticky-div {
   width: 180px;
   height: 34px;
@@ -89,7 +83,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   line-height: 0.875rem;
@@ -127,7 +120,22 @@ h3 {
 
 .ais-RefinementList-item {
   border-bottom: 1px dotted #b2b2b2;
-  padding: 10px 0;
+}
+
+.ais-RefinementList-item--selected {
+  color: #E72B1E;
+}
+
+.ais-RefinementList-showMore {
+  background-color: transparent;
+  color: #E72B1E;
+  opacity: .7;
+  padding: 0;
+}
+
+.ais-RefinementList-showMore:hover {
+  background-color: transparent;
+  opacity: 1;
 }
 
 .ais-RefinementList-label {
@@ -151,9 +159,10 @@ h3 {
   padding: 0;
   font-size: 1rem;
   font-weight: bold;
+  margin-bottom: 12px;
 }
 
-.ais-ClearRefinements-button::hover {
+.ais-ClearRefinements-button:hover {
   background-color: transparent;
 }
 
@@ -170,6 +179,30 @@ h3 {
 .mobile-navbar {
   width: 100%;
   display: none;
+}
+
+.views {
+  font-size: .9rem;
+}
+
+.ais-RefinementList-labelText {
+  text-transform: capitalize;
+}
+
+.ais-SearchBox-input {
+  width: calc(100% - 42px);
+}
+
+.feed {
+  color: white;
+}
+
+.sort-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #CCCCCC;
 }
 
 /* Media query */

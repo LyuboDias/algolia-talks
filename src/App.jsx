@@ -112,6 +112,7 @@ function App() {
     ];
   }, []);
 
+
   return (
     <div>
       <header>
@@ -159,7 +160,8 @@ function App() {
                 <h2 className="talks">Talks</h2>
                 <Stats />
               </div>
-              <div>
+              <div className="sort-by">
+                <p>More Filters</p>
                 <SortBy 
                   defaultRefinement="Talks"
                   items={[
@@ -168,7 +170,6 @@ function App() {
                     {value: 'Talks_viewed_count_desc', label: 'Most Views'},
                   ]}
                 />
-                <p>More Filters</p>
               </div>
               <Hits hitComponent={Hit} />
 
@@ -181,7 +182,7 @@ function App() {
       </div>
       {/* sticky div */}
       <div className="sticky-div">
-      <img src="/arrow.png" alt="arrow" className="arrow" />
+        <img src="/arrow.png" alt="arrow" className="arrow" />
         <p className="feed">New! Activity Feed</p>
       </div>
       <footer>
@@ -198,7 +199,7 @@ function Hit(props) {
     <article>
       <h1>
         <Highlight attribute="speakers" hit={props.hit} highlightPreTag />
-        :&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <Highlight attribute="name" hit={props.hit} />
       </h1>
       <br />
@@ -209,8 +210,11 @@ function Hit(props) {
           className="hit_image"
         />
         <Highlight attribute="description" hit={props.hit} />
-        <Highlight attribute="duration_range" hit={props.hit} />
       </div>
+      <p className="views">
+        👀 {props.hit.viewed_count}&nbsp;
+        👍🏻 {props.hit.popularity_score}&nbsp;
+      </p>
     </article>
   );
 }
