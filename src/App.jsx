@@ -167,7 +167,6 @@ function App() {
                 : 
                   <p onClick={() => setDropDown((dropDown) => !dropDown)} className="dropbtn">Show Filters</p>
                 }
-                {/* <p onClick={() => setDropDown((dropDown) => !dropDown)} className="dropbtn">More Filters</p> */}
                 <SortBy 
                   defaultRefinement="Talks"
                   items={[
@@ -201,13 +200,13 @@ function App() {
       </div>
       {/* sticky div */}
       <div className="sticky-div">
-        <img src="/arrow.png" alt="arrow" className="arrow" />
+        <img src="assets/arrow.png" alt="arrow" className="arrow" />
         <p className="feed">New! Activity Feed</p>
       </div>
       <footer>
-        <img src="/footer.png" alt="footer" className="footer-img" />
-        <img src="/mobile-footer-top.png" alt="footer" className="mobile-footer" />
-        <img src="/mobile-footer-bottom.png" alt="footer" className="mobile-footer" />
+        <img src="assets/footer.png" alt="footer" className="footer-img" />
+        <img src="assets/mobile-footer-top.png" alt="footer" className="mobile-footer" />
+        <img src="assets/mobile-footer-bottom.png" alt="footer" className="mobile-footer" />
       </footer>
     </div>
   );
