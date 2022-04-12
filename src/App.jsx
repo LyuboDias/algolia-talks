@@ -8,15 +8,15 @@ import {
   SortBy,
   RefinementList,
   Pagination,
-  Highlight,
 } from 'react-instantsearch-dom';
 import qs from 'qs';
-import PropTypes from 'prop-types';
+
 import './App.css';
 import SEARCH_CLIENT from './constants/client';
 import { Autocomplete } from './components/Autocomplete.jsx';
 import ClearRefinements from 'react-instantsearch-dom/dist/cjs/widgets/ClearRefinements';
 import Stats from 'react-instantsearch-dom/dist/cjs/widgets/Stats';
+import Hit from './components/Hits';
 
 const VirtualSearchBox = connectSearchBox(() => null);
 
@@ -193,7 +193,7 @@ function App() {
               <Hits hitComponent={Hit} />
 
               <div className="pagination">
-                <Pagination />
+                <Pagination showLast  showPrevious={false} showNext={false} padding={2} />
               </div>
             </div>
           </div>
@@ -212,34 +212,5 @@ function App() {
     </div>
   );
 }
-
-function Hit(props) {
-  return (
-    <article>
-      <h1>
-        <Highlight attribute="speakers" hit={props.hit} highlightPreTag />
-        &nbsp;&nbsp;
-        <Highlight attribute="name" hit={props.hit} />
-      </h1>
-      <br />
-      <div className="wrapper">
-        <img
-          src={props.hit.image_url}
-          alt={props.hit.name}
-          className="hit_image"
-        />
-        <Highlight attribute="description" hit={props.hit} />
-      </div>
-      <p className="views">
-        👀 {props.hit.viewed_count}&nbsp;
-        👍🏻 {props.hit.popularity_score}&nbsp;
-      </p>
-    </article>
-  );
-}
-
-Hit.propTypes = {
-  hit: PropTypes.object.isRequired,
-};
 
 export default App;

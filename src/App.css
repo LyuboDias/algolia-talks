@@ -124,6 +124,7 @@ footer {
 
 .ais-RefinementList-item--selected {
   color: #E72B1E;
+  border: 2px solid red;
 }
 
 .ais-RefinementList-showMore {
@@ -207,6 +208,27 @@ footer {
 
 .dropbtn {
   display: none;
+}
+
+.ais-Pagination-link {
+  padding: 0 6px;
+  border-radius: 0;
+  border: none;
+  color: black;
+}
+
+.ais-Pagination-item--selected .ais-Pagination-link {
+  color: #E72B1E;
+  background-color: transparent;
+}
+
+.ais-Pagination-item--selected:hover .ais-Pagination-link {
+  color: black;
+}
+
+.ais-Pagination-link:hover {
+  color: #E72B1E;
+  background-color: transparent;
 }
 
 /* Media query */
