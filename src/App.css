@@ -40,8 +40,8 @@ footer {
 
 .hit_image {
   max-width: 180px;
-  max-height: 100px;
-  padding-right: 16px;
+  height: 100px;
+  margin-right: 16px;
 }
 
 .ais-Hits-list {
@@ -205,6 +205,10 @@ footer {
   border-bottom: 1px solid #CCCCCC;
 }
 
+.dropbtn {
+  display: none;
+}
+
 /* Media query */
 @media (max-width: 850px) {
   .feed {
@@ -231,7 +235,20 @@ footer {
     border-left: none;
   }
 
-  .search-panel__filters {
+  .search-panel {
+    display: block;
+  }
+
+  .hidden {
     display: none;
   }
+
+  .dropbtn {
+    display: block;
+  }
+
+  .ais-ClearRefinements-button {
+    margin-top: 12px;
+  }
+  
 }

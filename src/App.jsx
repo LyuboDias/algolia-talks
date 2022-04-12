@@ -40,7 +40,8 @@ function App() {
   const [searchState, setSearchState] = React.useState(() =>
     urlToSearchState(window.location)
   );
-  const timerRef = React.useRef(null); 
+  const timerRef = React.useRef(null);
+  const [dropDown, setDropDown] = React.useState(false);
 
   React.useEffect(() => {
     clearTimeout(timerRef.current);
@@ -128,7 +129,7 @@ function App() {
           createURL={createURL}
         >
           <div className="search-panel">
-            <div className="search-panel__filters">
+            <div className="search-panel__filters hidden">
               <ClearRefinements />
               <h3>Tags</h3>
               <RefinementList attribute="tags" searchable showMore limit={5} />
@@ -161,7 +162,12 @@ function App() {
                 <Stats />
               </div>
               <div className="sort-by">
-                <p>More Filters</p>
+                {dropDown ?
+                  <p onClick={() => setDropDown((dropDown) => !dropDown)} className="dropbtn">Hide Filters</p>
+                : 
+                  <p onClick={() => setDropDown((dropDown) => !dropDown)} className="dropbtn">Show Filters</p>
+                }
+                {/* <p onClick={() => setDropDown((dropDown) => !dropDown)} className="dropbtn">More Filters</p> */}
                 <SortBy 
                   defaultRefinement="Talks"
                   items={[
@@ -171,6 +177,19 @@ function App() {
                   ]}
                 />
               </div>
+              {dropDown ? 
+                <div className="search-panel__filters">
+                  <ClearRefinements />
+                  <h3>Tags</h3>
+                  <RefinementList attribute="tags" searchable showMore limit={5} />
+                  <h3>Events</h3>
+                  <RefinementList attribute="event_name" showMore limit={5} />
+                  <h3>Speakers</h3>
+                  <RefinementList attribute="speakers" showMore limit={5} />
+                </div>
+              :
+                ''
+              }
               <Hits hitComponent={Hit} />
 
               <div className="pagination">
