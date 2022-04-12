@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "942fcf943ebb4f8182f4",
+    "revision": "61217a2c335432f76b5e",
     "url": "/algolia-talks/static/css/main.c46757b8.chunk.css"
   },
   {
-    "revision": "942fcf943ebb4f8182f4",
-    "url": "/algolia-talks/static/js/main.942fcf94.chunk.js"
+    "revision": "61217a2c335432f76b5e",
+    "url": "/algolia-talks/static/js/main.61217a2c.chunk.js"
   },
   {
     "revision": "28ad6782969229e87e80",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/algolia-talks/static/js/runtime~main.15f8ccce.js"
   },
   {
-    "revision": "11fadca22eed8b9709fba8169eecf603",
+    "revision": "e02fab38fa194d26018710c3181ec339",
     "url": "/algolia-talks/index.html"
   }
 ];
