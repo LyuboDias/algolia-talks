@@ -1,12 +1,15 @@
 {
   "name": "y",
   "version": "1.0.0",
+  "homepage": "http://lyubodias.github.io/algolia-talks",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@algolia/autocomplete-js": "^1.6.1",
@@ -26,6 +29,7 @@
     "eslint-plugin-import": "2.19.1",
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.17.0",
+    "gh-pages": "^3.2.3",
     "prettier": "1.19.1",
     "prop-types": "15.7.2"
   },
