@@ -1,4 +1,4 @@
-## Welcome to Algolia-Talks
+## Welcome to Algolia-Talks Live Preview Here -> https://lyubodias.github.io/algolia-talks/
 ## To install all dependancy 
 
 ### Run 'npm install' 
@@ -49,4 +49,5 @@ Here are some of the key points:
 - On mobile when show filters and apply some, will reset if close the filters menu
 - Index of query_suggestions has 17 records but has not been implemented into Main search bar
 - Code base need refactoring ( + add SasS )
+- Add No Results component
 
