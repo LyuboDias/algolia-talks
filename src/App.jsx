@@ -117,8 +117,8 @@ function App() {
   return (
     <div>
       <header>
-        <img src="/navbar.png" alt="navbar" className="navbar-img" />
-        <img src="/mobile-navbar.png" alt="mobile-navbar" className="mobile-navbar" />
+        <img src="assets/navbar.png" alt="navbar" className="navbar-img" />
+        <img src="assets/mobile-navbar.png" alt="mobile-navbar" className="mobile-navbar" />
       </header>
       <div className="container">
         <InstantSearch
